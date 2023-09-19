@@ -35,11 +35,44 @@
        </div>
         <div class="about-col-2">
              <h1 class="sub-title">About Me</h1>
-         <p> </p>
+         <p> Hi,I'm Bhavani Tiwari.I'm ComputerScience student. Aspiring Software Engineer and I'm Eager to Learn, Grow and contibute. Outside of coding,I enjoy hiking in the great outdoors.I believe in the importance of continuous learning.I'm excited to connect with fellow tech enthusiasts. 
+           </p>
+           <div class="Tab-titles">
+           <p class="tab-links active-link" onclick="opentab('skills')">skills</p>
+           <p class="tab-links" onclick="opentab('education')">Education</p>
+           </div>
+           <div class="tab-contents active-tab" id="skills">
+          <ul>
+            <li><span>C</span><br>C++<br>Html<br>Css<br>Javascript<br>Python<br>Java</li>
+    
+          </ul></div>
+        <div class="tab-contents active-tab" id="education">
+          <ul>
+            <li><span>2020 - 2024</span><br>Student at MallaReddy Institute of Engineering and Technology</li>
+            <li><span>2018 - 2020</span><br>MPC from Narayana Junior College</li>
+            <li><span>2018</span><br>M.B>Grammar High School</li>
+          </ul>
+        </div>
        </div>
       </div>
    </div>
 </div>
+
+<script>
+   var tablinks = document.getElementsByClassName("tab-links");
+   var tabcontents = document.getElementsByClassName("tab-contents");
+  
+  function opentab(tabname){
+     for(tablink of tablinks){
+      tablink.classlist.remove("active-link");
+     }
+     for(tabcontent of tabcontents){
+      tabcontent.classlist.remove("active-tab");
+     }
+     event.currentTarget.classlist.add("active-link")
+  }
+</script>
+
   </body>
 </html>
 
@@ -143,4 +176,39 @@ font-size: 60px;
 font-weight: 600;
 color: #fff;
 
+}
+
+.tab-titles{
+   display:flex;
+   margin:20px 0 40px;
+}
+.tab-links{
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+.tab-links::after{
+   content:'';
+   width: 0;
+   height: 3px;
+   background: #ff004f;
+   position: absolute;
+   left: 0;
+   bottom: -8px;
+   transition: 0.5s;
+}
+.tab-links.active-link::after{
+  width: 50%;
+}
+.tab-contents ul li{
+  list-style: none;
+  margin: 10px 0;
+}
+.tab-contents{
+  display: none;
+}
+.tab-contents.active-tab{
+  display: block;
 }
